@@ -1,0 +1,33 @@
+/*css tricks css masonry grid*/
+
+@font-face {
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+    font-family: "San-Francisco";
+}
+
+@font-face {
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
+    font-family: "San-Francisc-Bold";
+}
+
+html {
+    font-size: 100%; /*16px*/
+    font-family: San-Francisco-Black, Helvetica;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 5em;
+    background-color: red;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 1000;
+}
+
+body {
+    font-size: clamp (1rem, 2vw + 1rem, 3rem); /*min width, 2%viewport+1elative to html doc size,max width*/
+}
