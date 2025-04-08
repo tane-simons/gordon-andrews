@@ -1,33 +1,54 @@
 /*css tricks css masonry grid*/
-
-@font-face {
-    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
-    font-family: "San-Francisco";
+:root {
+    --main-color: #282828;
+    --secondary-color: #F5EEE2;
 }
 
 @font-face {
-    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
-    font-family: "San-Francisc-Bold";
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-heavy-webfont.woff");
+    font-family: "San-Francisco-Heavy";
+}
+
+@font-face {
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff");
+    font-family: "San-Francisco-Medium";
+
+    @font-face {
+        src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-light-webfont.woff");
+        font-family: "San-Francisco-Light";
+    }
 }
 
 html {
     font-size: 100%; /*16px*/
-    font-family: San-Francisco-Black, Helvetica;
+    font-family: San-Francisco-Medium, Helvetica;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 5em;
+    padding: 1em;
     background-color: red;
+    font-family: San-Francisco-Heavy, Helvetica;
 }
 
 h1 {
     font-size: 2rem;
     font-weight: 1000;
+    color: var(--secondary-color);
+}
+
+#about {
+    font-weight: 600;
+    color: var(--secondary-color);
 }
 
 body {
-    font-size: clamp (1rem, 2vw + 1rem, 3rem); /*min width, 2%viewport+1elative to html doc size,max width*/
+    background-color: var(--main-color);
+}
+
+#grid {
+    height: calc(100vh - 2em);
+    
 }
