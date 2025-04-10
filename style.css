@@ -28,7 +28,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em;
+    padding: 1em 1em 0 1em;
     font-family: San-Francisco-Heavy, Helvetica;
 }
 
@@ -48,18 +48,63 @@ body {
 }
 
 #grid {
-    height: calc(100vh - 6em);
-    padding: 1em;
+    height: calc(100vh - 5rem);
+    padding: 1rem;
     display: grid;
-    gap: 1em;
+    gap: 1rem;
     grid-template-columns: 2fr 2fr 1fr 2fr 2fr;
-    column-gap: 1em;
-    grid-template-rows: 3fr 1fr 3fr;
+    grid-template-rows: 3fr auto 3fr;
 }
 
 .category {
-    border: solid 1px white;
     border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.category img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.category::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#photos::before {
+    background: linear-gradient(to bottom, rgb(222, 217, 212), rgba(222, 217, 212, 0.9), transparent);
+}
+
+#labelling::before {
+    background: linear-gradient(to bottom, rgb(177, 186, 145), rgba(177, 186, 145, 0.7), transparent);
+}
+
+#catalogues::before {
+    background: linear-gradient(to bottom, rgb(239, 170, 101), rgba(239, 170, 101, 0.8), transparent);
+}
+
+#objects::before {
+    background: linear-gradient(to bottom, rgb(215, 141, 118), rgba(215, 141, 118, 0.7), transparent);
+}
+
+#journals::before {
+    background: linear-gradient(to bottom, rgb(229, 193, 85), rgba(229, 193, 85, 0.7), transparent);
+}
+
+#banknotes::before {
+    background: linear-gradient(to bottom, rgb(152, 169, 186), rgba(152, 169, 186, 0.8), transparent);
+}
+
+#branding::before {
+    background: linear-gradient(to bottom, rgb(206, 183, 167), rgba(206, 183, 167, 0.9), transparent);
+}
+
+#artworks::before {
+    background: linear-gradient(to bottom, rgb(214, 210, 108),  rgba(214, 210, 108, 0.9), transparent);
 }
 
 #photos {
@@ -67,7 +112,7 @@ body {
     grid-row: 1;
 }
 
-#banknotes {
+#labelling {
     grid-column: 2;
     grid-row: 1 / 3;
 }
@@ -86,15 +131,15 @@ body {
     grid-column: 3;
     grid-row: 2;
     display: flex;
-    align-items: centre;
-    justify-items: centre;
-
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    width: 100%;
+    height: auto;
 }
 
 #centre img {
-    aspect-ratio: 1 / 1;
     width: 100%;
-    max-height: 100%;
     border-radius: 10px;
 }
 
@@ -103,7 +148,7 @@ body {
     grid-row: 2 / 4;
 }
 
-#labelling {
+#banknotes {
     grid-column: 2 / 4;
     grid-row: 3;
 }
@@ -116,4 +161,12 @@ body {
 #artworks {
     grid-column: 5;
     grid-row: 3;
+}
+
+h3 {
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    font-size: clamp(1.5em, 3vw, 3em);
+    font-family: San-Francisco-Medium, Helvetica;
 }
