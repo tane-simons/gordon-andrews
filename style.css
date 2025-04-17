@@ -301,68 +301,71 @@ h2 {
     background-color: rgba(0,0,0,0.5);
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
+    overflow-y: auto;
 }
 
 .lightbox {
     width: 75%;
     margin: 8rem 0 0 0;
-    height: 70%;
+    height: fit-content;
     display: none;
-    padding: 0 5%;
-    grid-template-columns: repeat(2, 50%);
-    grid-template-rows: auto auto;
-    background-color: white;
+    padding: 5%;
     border-radius: 12px;
-    gap: 5%;
     scrollbar-width: none;
-    overflow-y: auto;
-    overflow-x: hidden;
 }
 
 #photos-lightbox {
     background-color: var(--photos-color);
 }
 
+#lightbox-head {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    padding: 0 0 5% 0;
+}
+
 #lightbox-title {
-    grid-column: 1;
-    grid-row: 1;
     font-size: clamp(2rem, 3.5vw, 4rem);
-    padding: 10% 0 0 0;
 }
 
 #x {
-    position: relative;
-    right: 2%;
-    text-align: right;
-    font-size: 300%;
-    font-family: San-Francisco-Thin, Helvetica;
-    font-weight: 1000;
+    filter:contrast(0.8);
 }
 
 #x:hover {
     cursor: pointer;
 }
 
+#lightbox-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
 #lightbox-desc {
-    grid-column: 1;
-    grid-row: 2;
     line-height: 120%;
     font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    padding: 0 5% 0 0;
+}
+
+#lightbox-desc p {
+    padding: 1rem;
 }
 
 #lightbox-img {
-    grid-column: 2;
-    grid-row:  2;
-    max-width: 100%;
-    max-height: 65vh;
-    justify-self: right;
+    max-width: 50%;
     border-radius: 12px;
+    object-fit: contain;
 }
 
 footer {
-    padding: 0 7%;
+    padding: 10% 7% 0 7%;
 }
 
 #footer-nav {
@@ -560,6 +563,20 @@ footer p a:visited {
 
     #category-grid {
         grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    }
+
+    .lightbox {
+        width: 100%;
+        min-height: calc(100vh - 9.8rem);
+    }
+
+    #lightbox-info {
+        flex-direction: column-reverse;
+    }
+
+    #lightbox-img {
+        max-width: 100%;
+        padding: 0 0 1rem 0;
     }
 
     footer {

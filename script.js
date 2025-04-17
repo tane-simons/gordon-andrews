@@ -8,13 +8,15 @@ const x = document.getElementById('x');
 document.querySelectorAll('.item').forEach(img => {
     img.addEventListener('click', () => {
         lightboxTitle.textContent = img.dataset.title || '';
-        lightboxDesc.textContent = img.dataset.desc || '';
+        lightboxDesc.innerHTML = img.dataset.desc || '';
         lightboxImg.src = img.dataset.img;
         lightboxContainer.style.display = 'flex';
-        lightbox.style.display = 'grid';
+        lightbox.style.display = 'block';
         document.body.classList.add('no-scroll');
     });
 });
+
+lightbox.addEventListener('')
 
 x.addEventListener('click', () => {
     lightboxContainer.style.display = 'none';
