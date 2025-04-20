@@ -16,8 +16,6 @@ document.querySelectorAll('.item').forEach(img => {
     });
 });
 
-lightbox.addEventListener('')
-
 x.addEventListener('click', () => {
     lightboxContainer.style.display = 'none';
     lightboxImg.src = '';
